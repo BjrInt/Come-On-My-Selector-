@@ -1,0 +1,17 @@
+/*
+  Default styling for the coms library,
+  if you want to rename the custom class make sure to change the
+  cssSelector variable in the lib.js file!
+*/
+
+._comeonmyselector{
+
+}
+
+._comeonmyselector ul{
+
+}
+
+._comeonmyselector li{
+
+}
