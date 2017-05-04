@@ -1,9 +1,9 @@
 # COME ON MY SELECTOR!
 
 ## Description
-Replaces all <select> tag with a custom SELECTOR that supports css background styling. Replaced selectors are <div>s filled with an ul>li stucture.
+Replaces all `<select>` tag with a custom SELECTOR that supports css background styling. Replaced selectors are `<div>`s filled with an ul>li stucture.
 
-This is mainly thought as a workaround for the lack of styling options in Webkit-driven browser (hi Google Chrome :^) )
+This is mainly thought as a workaround for the lack of styling options in Webkit-driven browser (hi Google Chrome :^) ), also preserves some of the `<option>` children tags (`<span>`, `<img>`, `<em>` and `<strong>`).
 
 ## Examples
 ```javascript
