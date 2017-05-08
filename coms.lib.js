@@ -99,7 +99,11 @@ function COMS(){
     offWidth = 0;
     for(j=0; j<_COMS_selects[i].options.length;j++){
       selectorLi = document.createElement('li');
-        selectorLi.setAttribute('id', j+'_COMS_li')
+        selectorLi.setAttribute('id', j+'_COMS_li');
+
+      liArrow = document.createElement('span');
+        liArrow.setAttribute('class', '_arrow');
+        liArrow.innerHTML = '&#129171;';
 
       iOption = _COMS_selects[i].options[j];
       innertxt = iOption.innerHTML;
@@ -119,11 +123,6 @@ function COMS(){
         }
       }
 
-      liArrow = document.createElement('span');
-        liArrow.setAttribute('class', '_arrow');
-        liArrow.innerHTML = '&#129171;';
-
-
       if(iOption.className !== ''){
         selectorLi.setAttribute('class', iOption.className);
       }
@@ -141,8 +140,12 @@ function COMS(){
     selectorHead = document.createElement('div');
       selectorHead.setAttribute('class', '_selectedoption');
 
+    headArrow = document.createElement('span');
+      headArrow.setAttribute('class', '_arrow');
+      headArrow.innerHTML = '&#129171;';
+
     selectorHead.innerHTML = selectorTitle;
-    selectorHead.appendChild(liArrow);
+    selectorHead.appendChild(headArrow);
     selectorHead.style.cssText = selectorStyle;
 
     selector.appendChild(selectorHead);
@@ -188,6 +191,9 @@ document.addEventListener('click', function(event) {
     document.getElementById(_COMS_id[ulPos]).selectedIndex = lindex;
     ul.style.display = "none";
     selectHead.className = '_selectedoption';
+
+    var event = new Event('change');
+    document.getElementById(_COMS_id[ulPos]).dispatchEvent(event);
   }
 
   else{

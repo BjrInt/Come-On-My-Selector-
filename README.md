@@ -1,5 +1,8 @@
 # COME ON MY SELECTOR!
 
+# Demo
+You can see how it works live [here](http://bonjourinternet.top/lab/ComeOnMySelector/)!
+
 ## Description
 Replaces all `<select>` tag with a custom SELECTOR that supports css background styling. Replaced selectors are `<div>`s filled with an ul>li stucture. The original select is kept but hidden, its value is updated automatically allowing scripting to be done properly.
 
