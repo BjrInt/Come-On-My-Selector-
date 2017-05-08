@@ -99,11 +99,15 @@ function COMS(){
     offWidth = 0;
     for(j=0; j<_COMS_selects[i].options.length;j++){
       selectorLi = document.createElement('li');
+<<<<<<< HEAD
         selectorLi.setAttribute('id', j+'_COMS_li');
 
       liArrow = document.createElement('span');
         liArrow.setAttribute('class', '_arrow');
         liArrow.innerHTML = '&#129171;';
+=======
+        selectorLi.setAttribute('id', j+'_COMS_li')
+>>>>>>> master
 
       iOption = _COMS_selects[i].options[j];
       innertxt = iOption.innerHTML;
@@ -116,6 +120,7 @@ function COMS(){
       for(k=0; k<_COMS_properties.length;k++){
         propn = _COMS_properties[k];
         propv = iOption.style.getPropertyValue(propn);
+<<<<<<< HEAD
 
         if(propv !== ''){
           _COMS_styles[i+'_COMS_ul'][j] += propn + ": " + propv +";";
@@ -123,6 +128,20 @@ function COMS(){
         }
       }
 
+=======
+
+        if(propv !== ''){
+          _COMS_styles[i+'_COMS_ul'][j] += propn + ": " + propv +";";
+          selectorLi.style.setProperty(propn, propv);
+        }
+      }
+
+      liArrow = document.createElement('span');
+        liArrow.setAttribute('class', '_arrow');
+        liArrow.innerHTML = '&#129171;';
+
+
+>>>>>>> master
       if(iOption.className !== ''){
         selectorLi.setAttribute('class', iOption.className);
       }
@@ -140,12 +159,17 @@ function COMS(){
     selectorHead = document.createElement('div');
       selectorHead.setAttribute('class', '_selectedoption');
 
+<<<<<<< HEAD
     headArrow = document.createElement('span');
       headArrow.setAttribute('class', '_arrow');
       headArrow.innerHTML = '&#129171;';
 
     selectorHead.innerHTML = selectorTitle;
     selectorHead.appendChild(headArrow);
+=======
+    selectorHead.innerHTML = selectorTitle;
+    selectorHead.appendChild(liArrow);
+>>>>>>> master
     selectorHead.style.cssText = selectorStyle;
 
     selector.appendChild(selectorHead);
@@ -191,9 +215,12 @@ document.addEventListener('click', function(event) {
     document.getElementById(_COMS_id[ulPos]).selectedIndex = lindex;
     ul.style.display = "none";
     selectHead.className = '_selectedoption';
+<<<<<<< HEAD
 
     var event = new Event('change');
     document.getElementById(_COMS_id[ulPos]).dispatchEvent(event);
+=======
+>>>>>>> master
   }
 
   else{
