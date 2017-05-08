@@ -103,7 +103,7 @@ function COMS(){
 
       liArrow = document.createElement('span');
         liArrow.setAttribute('class', '_arrow');
-        liArrow.innerHTML = '&#129171;';
+        liArrow.innerHTML = '&#8659;';
 
       iOption = _COMS_selects[i].options[j];
       innertxt = iOption.innerHTML;
@@ -142,7 +142,7 @@ function COMS(){
 
     headArrow = document.createElement('span');
       headArrow.setAttribute('class', '_arrow');
-      headArrow.innerHTML = '&#129171;';
+      headArrow.innerHTML = '&#8659;';
 
     selectorHead.innerHTML = selectorTitle;
     selectorHead.appendChild(headArrow);

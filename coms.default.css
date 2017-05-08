@@ -51,9 +51,7 @@
 ._comeonmyselector li ._arrow,
 ._comeonmyselector ._selectedoptionclicked ._arrow,
 ._comeonmyselector ._selectedoption ._arrow{
-  font-size: 200%;
   position : relative;
-  top : 12px;
   left : 5px;
 }
 

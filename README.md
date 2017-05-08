@@ -20,7 +20,9 @@ COMS();
 * You can override the default COMS styling by editing the css file. You can also change the default selector class name if needed.
 
 ## To do
-* Bugfix : set the container width so it matches the longest `<option>` text.
+* Bugfix : set the container width so it matches the longest `<option>` text;
+* Add the possibility to only replace some `<select>` based on their .class;
+* Angular2 fork (coming soon).
 
 ## Usage
 [MIT licensed](https://opensource.org/licenses/MIT)
