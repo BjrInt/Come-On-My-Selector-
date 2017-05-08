@@ -2,16 +2,61 @@
   Default styling for the coms library,
   if you want to rename the custom class make sure to change the
   cssSelector variable in the lib.js file!
+
+  (No LESS/SASS but a good old search&replace should do the trick :^) )
 */
 
 ._comeonmyselector{
-
+  display: inline-block;
+  background-color: #FFF;
+  color : #5e6570;
 }
 
 ._comeonmyselector ul{
-
+  position : absolute;
+  /*display : none;*/
+  border : 1px solid #444;
+  border-top: 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+._comeonmyselector li{
+  border-bottom: 1px solid #BBB;
+  padding : 2px 12px;
+  background-color: #FFF;
 }
 
-._comeonmyselector li{
+._comeonmyselector li:hover{
+  color : #FFF;
+  background-color: #5e6570;
+}
 
+._comeonmyselector ._selectedoption,
+._comeonmyselector ._selectedoptionclicked{
+  display: inline-block;
+  border : 1px solid #444;
+  padding : 6px 12px;
+  cursor : pointer;
+  border-radius: 5px;
+}
+
+._comeonmyselector ._selectedoptionclicked{
+  border-radius: 5px 5px 0 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+._comeonmyselector li ._arrow,
+._comeonmyselector ._selectedoptionclicked ._arrow,
+._comeonmyselector ._selectedoption ._arrow{
+  font-size: 200%;
+  position : relative;
+  top : 12px;
+  left : 5px;
+}
+
+._comeonmyselector li ._arrow{
+  visibility: hidden;
 }
