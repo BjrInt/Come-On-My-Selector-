@@ -19,5 +19,8 @@ COMS();
 * You can also choose to display the original select by setting the variable `_COMS_hideOriginalSelect` to false
 * You can override the default COMS styling by editing the css file. You can also change the default selector class name if needed.
 
+## To do
+* Bugfix : set the container width so it matches the longest `<option>` text.
+
 ## Usage
 [MIT licensed](https://opensource.org/licenses/MIT)
