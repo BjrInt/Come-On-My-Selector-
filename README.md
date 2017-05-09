@@ -13,6 +13,9 @@ Simply call the COMS() function whenever your DOM is ready.
 ```javascript
 // Replace all <select> tags within the document
 COMS();
+
+// Only replace the <select>s with the .pleasereplaceme css class
+COMS('pleasereplaceme');
 ```
 
 * You can disable the console rendering time log by setting the variable `_COMS_exec` to false.
@@ -20,8 +23,6 @@ COMS();
 * You can override the default COMS styling by editing the css file. You can also change the default selector class name if needed.
 
 ## To do
-* Bugfix : set the container width so it matches the longest `<option>` text;
-* Add the possibility to only replace some `<select>` based on their .class;
 * Angular2 fork (coming soon).
 
 ## Usage
