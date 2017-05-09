@@ -7,6 +7,9 @@ var _COMS_exec = true;
 // Hide the original <select>
 var _COMS_hideOriginalSelect = true;
 
+// Charcode used for the arrow, replace by an empty string to remove it.
+var _COMS_arrowChar = "&#8659";
+
 /*
   List of fetched <option> styling.
   Feel free to uncomment/add/remove some of them
@@ -75,6 +78,10 @@ function COMS(){
 
   var _COMS_selects = document.getElementsByTagName('select');
 
+  if(arguments.length == 1){
+    _COMS_selects = document.getElementsByClassName(arguments[0]);
+  }
+
   for(i=0; i<_COMS_selects.length; i++){
     if(_COMS_hideOriginalSelect == true)
         _COMS_selects[i].style.display = "none";
@@ -103,7 +110,7 @@ function COMS(){
 
       liArrow = document.createElement('span');
         liArrow.setAttribute('class', '_arrow');
-        liArrow.innerHTML = '&#8659;';
+        liArrow.innerHTML = _COMS_arrowChar;
 
       iOption = _COMS_selects[i].options[j];
       innertxt = iOption.innerHTML;
@@ -142,18 +149,30 @@ function COMS(){
 
     headArrow = document.createElement('span');
       headArrow.setAttribute('class', '_arrow');
-      headArrow.innerHTML = '&#8659;';
+      headArrow.innerHTML = _COMS_arrowChar;
 
     selectorHead.innerHTML = selectorTitle;
     selectorHead.appendChild(headArrow);
     selectorHead.style.cssText = selectorStyle;
 
     selector.appendChild(selectorHead);
-    selectorUl.style.display = "none";
+    selectorUl.style.display = "block";
+    // [BUGFIX] OffsetWidth doesn't work unless its set to block
+
     selector.appendChild(selectorUl);
 
     parentContainer = _COMS_selects[i].parentNode;
     parentContainer.insertBefore(selector, _COMS_selects[i]);
+
+    minW = selectorUl.offsetWidth;
+    minusPadding = window.getComputedStyle(selectorHead, null);
+    minW = minW - (parseInt(minusPadding.getPropertyValue('padding-left')) + parseInt(minusPadding.getPropertyValue('padding-right')));
+
+    // Hardcoded! Removes border offset (to fix)
+    minW = minW - 2;
+    selectorHead.style.minWidth = minW +"px";
+
+    selectorUl.style.display = "none";
   }
 
   if(_COMS_exec == true){
