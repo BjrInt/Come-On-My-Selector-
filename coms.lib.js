@@ -14,7 +14,6 @@ var _COMS_arrowChar = "&#8659";
   List of fetched <option> styling.
   Feel free to uncomment/add/remove some of them
   for a better user experience.
-
   Always define the superproperties first so the
   subsets are not overwritten.
 */
@@ -170,8 +169,8 @@ function COMS(){
 
     // Hardcoded! Removes border offset (to fix)
     minW = minW - 2;
-    selectorHead.style.minWidth = minW +"px";
-
+    selector.style.minWidth = minW +"px";
+    selectorUl.style.minWidth = minW +"px";
     selectorUl.style.display = "none";
   }
 
@@ -206,6 +205,11 @@ document.addEventListener('click', function(event) {
 
     selectHead.style.cssText = _COMS_styles[ulId][lindex];
     selectHead.innerHTML = event.target.innerHTML;
+    offWidth = selectHead.offsetWidth;
+
+    // Hardcoded border-width
+    offWidth -= 2;
+    ul.style.minWidth = offWidth+"px";
 
     document.getElementById(_COMS_id[ulPos]).selectedIndex = lindex;
     ul.style.display = "none";
