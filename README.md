@@ -23,7 +23,11 @@ COMS('pleasereplaceme');
 * You can override the default COMS styling by editing the css file. You can also change the default selector class name if needed.
 
 ## To do
+* [Bugfix] Initial selector might appear too large/too thin on init.
 * Angular2 fork (coming soon).
+
+## Changelog
+* (02.06.17) Unified behavior on all browsers (fixed non-chrome webkit browsers compatibility)
 
 ## Usage
 [MIT licensed](https://opensource.org/licenses/MIT)

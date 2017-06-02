@@ -71,6 +71,8 @@ var _COMS_properties = new Array();
 var _COMS_styles = new Array();
 var _COMS_id = new Array();
 
+var isWebkit = 'WebkitAppearance' in document.documentElement.style;
+
 function COMS(){
   if(_COMS_exec == true)
     t0 = performance.now();
@@ -165,11 +167,17 @@ function COMS(){
 
     minW = selectorUl.offsetWidth;
     minusPadding = window.getComputedStyle(selectorHead, null);
-    minW = minW - (parseInt(minusPadding.getPropertyValue('padding-left')) + parseInt(minusPadding.getPropertyValue('padding-right')));
+
+    if(!isWebkit)
+      minW = minW - (parseInt(minusPadding.getPropertyValue('padding-left')) + parseInt(minusPadding.getPropertyValue('padding-right')));
 
     // Hardcoded! Removes border offset (to fix)
     minW = minW - 2;
-    selector.style.minWidth = minW +"px";
+
+    if(isWebkit){
+      selectorHead.style.width = selectorUl.offsetWidth + "px";
+    }
+
     selectorUl.style.minWidth = minW +"px";
     selectorUl.style.display = "none";
   }
