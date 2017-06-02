@@ -24,7 +24,7 @@ COMS('pleasereplaceme');
 
 ## To do
 * [Bugfix] Initial selector might appear too large/too thin on init.
-* Angular2 fork (coming soon).
+* COMS() as an Angular2 component
 
 ## Changelog
 * (02.06.17) Unified behavior on all browsers (fixed non-chrome webkit browsers compatibility)
